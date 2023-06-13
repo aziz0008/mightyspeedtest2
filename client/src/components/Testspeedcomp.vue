@@ -15,13 +15,13 @@ export default {
       const start = Date.now()
       //fetching a random 5 mb generated file from server
       //(i used an online file generator)
-      const response = await fetch('http://localhost:8081/files/1')
+      const response = await fetch('http://localhost:5173/files/1')
       const file = await response.blob()
       const end = Date.now()
       //calculating time defizit
       const duration = ((end - start) / 1000)
       //convertion
-      const size = (file.size / (1024*1024))
+      const size = (file.size / (1024))
       //result in Mbps
       this.downloadSpeed = (size / duration)
     }},mounted(){this.calculspeed()}
